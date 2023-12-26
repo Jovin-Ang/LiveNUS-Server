@@ -95,3 +95,38 @@
 #                 password: "P@ssw0rd",
 #                 password_confirmation: "P@ssw0rd",
 #               }])
+
+# Create dummy categories
+# Category.destroy_all
+# Category.create!([{
+#                     name: "Discussion",
+#                     description: "For general discussion about topics relating to the university.",
+#                   }, {
+#                     name: "Question",
+#                     description: "A QnA thread.",
+#                   }, {
+#                     name: "Looking for Advice",
+#                     description: "Seeking advice.",
+#                   }, {
+#                     name: "Campus / Hall",
+#                     description: "For topics centered around on campus stuff.",
+#                   }, {
+#                     name: "Module",
+#                     description: "Module related discussions",
+#                   }, {
+#                     name: "Meme",
+#                     description: "Memes, need I say more?",
+#                   }, {
+#                     name: "Misc",
+#                     description: "Miscellaneous threads.",
+#                   }])
+
+# Create dummy statuses
+# Status.destroy_all
+# Status.create!([{
+#                   name: "open",
+#                 }, {
+#                   name: "locked",
+#                 }, {
+#                   name: "stickied",
+#                 }])
