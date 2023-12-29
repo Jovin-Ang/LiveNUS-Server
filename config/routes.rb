@@ -6,7 +6,19 @@ Rails.application.routes.draw do
         registrations: "api/v1/registrations",
         tokens: "api/v1/tokens"
       }
-      resources :people
+      resources :categories
+      resources :posts do
+        member do
+          post "like"
+          post "vote"
+        end
+      end
+      resources :comments, except: :index do
+        member do
+          post "like"
+          post "vote"
+        end
+      end
     end
   end
 

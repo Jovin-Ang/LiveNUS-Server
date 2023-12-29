@@ -1,3 +1,5 @@
+require 'faker'
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -17,6 +19,7 @@
 #               }, {
 #                 name: "User"
 #               }])
+# p "Created #{Role.count} roles."
 
 # Create dummy users
 # User.destroy_all
@@ -95,6 +98,7 @@
 #                 password: "P@ssw0rd",
 #                 password_confirmation: "P@ssw0rd",
 #               }])
+# p "Created #{User.count} users."
 
 # Create dummy categories
 # Category.destroy_all
@@ -119,7 +123,11 @@
 #                   }, {
 #                     name: "Misc",
 #                     description: "Miscellaneous threads.",
+#                   }, {
+#                     name: "Announcements",
+#                     description: "Official announcements from the forum staff.",
 #                   }])
+# p "Created #{Category.count} categories."
 
 # Create dummy statuses
 # Status.destroy_all
@@ -130,3 +138,19 @@
 #                 }, {
 #                   name: "stickied",
 #                 }])
+# p "Created #{Role.count} statuses."
+
+# Create dummy posts
+# Post.create!(title: "Welcome to LiveNUS",
+#              body: "Welcome to the forum!, Feel free to introduce yourself in this thread!",
+#              user_id: 9,
+#              category_id: 8,
+#              status_id: 3)
+# 20.times do |index|
+#   Post.create!(title: Faker::Book.title,
+#                body: Faker::Lorem.sentence(word_count: 10, supplemental: false, random_words_to_add: 10).chop,
+#                user_id: rand(1..10),
+#                category_id: rand(1..7),
+#                status_id: 1)
+# end
+# p "Created #{Post.count} posts."
