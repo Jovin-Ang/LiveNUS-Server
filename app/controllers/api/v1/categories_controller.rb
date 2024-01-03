@@ -24,7 +24,7 @@ class Api::V1::CategoriesController < ApplicationController
   # Return a specific category with all its posts
   def show
     if @category
-      render json: CategorySerializer.new(@category, include: [:posts]).serializable_hash
+      render json: CategorySerializer.new(@category, include: [:posts, :"posts.user", :"posts.status"]).serializable_hash
     else
       render json: @category.errors, status: :unprocessable_entity
     end

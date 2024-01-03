@@ -7,7 +7,7 @@ class Api::V1::PostsController < ApplicationController
   # Returns an array of all posts.
   def index
     posts = Post.all.order(created_at: :desc)
-    render json: PostSerializer.new(posts, include: %w[user status]).serializable_hash
+    render json: PostSerializer.new(posts, include: %w[user status category]).serializable_hash
   end
 
   # Creates a post
@@ -23,7 +23,7 @@ class Api::V1::PostsController < ApplicationController
   # Returns a specific posts with all its comments (if any)
   def show
     if @post
-      render json: PostSerializer.new(@post, {params: {fetch_comments: true}, include: %w[user status]}).serializable_hash
+      render json: PostSerializer.new(@post, {params: {fetch_comments: true}, include: %w[user status category comments]}).serializable_hash
     else
       render json: @post.errors, status: :unprocessable_entity
     end
