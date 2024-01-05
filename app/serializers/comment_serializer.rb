@@ -1,6 +1,6 @@
 class CommentSerializer
   include JSONAPI::Serializer
-  attributes :body
+  attributes :body, :created_at, :updated_at
   meta do |comment|
     {
       likes: comment.comments_likes.length,
