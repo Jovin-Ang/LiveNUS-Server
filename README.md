@@ -22,7 +22,36 @@ To get the Rails server running locally:
 The api server will be started on port 3000 by default. Use `-p [port number]` to specify a different port.
 
 ### Deployment
-TBA
+To deploy the app, [Docker](https://docs.docker.com/get-docker) and [Docker Compose](https://docs.docker.com/compose/install)
+is required.
+
+#### Clone the repository on the docker host.
+```shell
+git clone https://github.com/Jovin-Ang/LiveNUS-Server
+cd LiveNUS-Server
+```
+
+#### Copy example .env file
+```shell
+cp .env.example .env
+```
+
+#### Start the server
+*The first time you run this, it will take 5-10 minutes to download dependencies, build, and setup the database*
+```shell
+# -d option 
+docker compose up -d
+```
+
+#### Stopping the server
+To stop the application, run docker compose down in your project directory.
+```shell
+docker compose down
+```
+
+#### Restart the server
+To restart the application run `docker compose up -d` in the project directory. Unlike the initial run, it should only take
+a few seconds.
 
 ## Overview
 

@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  db:
+    image: mysql
+    profiles: ["mysql"]
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: ${DOCKER_RESTART_POLICY:-unless-stopped}
+    stop_grace_period: "3s"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles: ["web"]
+    depends_on:
+      db:
+        condition: "service_started"
+    links:
+      - db
+    env_file: .env
+    restart: ${DOCKER_RESTART_POLICY:-unless-stopped}
+    volumes:
+      - ".:/app"
+    tty: true
+    ports:
+      - 3000:3000
+    stop_grace_period: "3s"
+
+volumes:
+  db_data:
