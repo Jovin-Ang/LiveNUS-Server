@@ -39,7 +39,7 @@ cp .env.example .env
 #### Start the server
 *The first time you run this, it will take 5-10 minutes to download dependencies, build, and setup the database*
 ```shell
-# -d option 
+# -d option will run the container in the background
 docker compose up -d
 ```
 
