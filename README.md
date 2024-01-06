@@ -89,6 +89,21 @@ curl --location --request POST 'http://127.0.0.1:3000/api/v1/tokens/refresh' \
 --header 'Authorization: Bearer <refresh_token>'
 ```
 
+You may refer to this table for the list of 10 test users created in the database from the seed file.
+
+| Username   | Email                          | Password           | Role      |
+|------------|--------------------------------|--------------------|-----------|
+| willie89   | willie_buchanan@testuser.com   | P@ssw0rd           | User      |
+| andrea02   | andrea_everett@testuser.com    | P@ssw0rd           | User      |
+| chloe27    | chloe_vaughan@testuser.com     | P@ssw0rd           | User      |
+| roberta03  | roberta_mooney@testuser.com    | P@ssw0rd           | User      |
+| malachy92  | malachy_moses@testuser.com     | P@ssw0rd           | User      |
+| adrian     | adrian_melendez@testmod.com    | iAmDaModP@ssw0rd   | Moderator |
+| rafferty85 | rafferty_friedman@testuser.com | P@ssw0rd           | User      |
+| marwa93    | marwa_alvarado@testuser.com    | P@ssw0rd           | User      |
+| tara       | tara_stark@testadmin.com       | iAmDaAdminP@ssw0rd | Admin     |
+| esmee31    | esmee_cantu@testuser.com       | P@ssw0rd           | User      |
+
 ### Endpoints
 
 | Prefix              | Verb      | URI Pattern               | Detail                                  |

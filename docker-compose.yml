@@ -2,7 +2,6 @@ version: '3.8'
 services:
   db:
     image: mysql
-    profiles: ["mysql"]
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
@@ -17,7 +16,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    profiles: ["web"]
     depends_on:
       db:
         condition: "service_started"
