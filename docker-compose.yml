@@ -18,13 +18,13 @@ services:
       dockerfile: Dockerfile
     depends_on:
       db:
-        condition: "service_started"
+        condition: service_started
     links:
       - db
     env_file: .env
     restart: ${DOCKER_RESTART_POLICY:-unless-stopped}
     volumes:
-      - ".:/app"
+      - ".:/rails"
     tty: true
     ports:
       - 3000:3000

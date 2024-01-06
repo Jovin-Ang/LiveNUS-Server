@@ -51,6 +51,4 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV.fetch("MYSQL_DATABASE") { "live_nus_server" } %>_production
-  username: live_nus_server
-  password: <%= ENV["LIVE_NUS_SERVER_DATABASE_PASSWORD"] %>
+  database: <%= ENV.fetch("MYSQL_DATABASE") { "live_nus_server" } %>
