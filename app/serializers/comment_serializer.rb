@@ -10,6 +10,6 @@ class CommentSerializer
   end
   belongs_to :post
   belongs_to :user
-  has_many :comments_likes, lazy_load_data: true
-  has_many :comments_votes, lazy_load_data: true
+  has_many :comments_likes
+  has_many :comments_votes
 end

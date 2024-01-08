@@ -23,7 +23,10 @@ class Api::V1::PostsController < ApplicationController
   # Returns a specific posts with all its comments (if any)
   def show
     if @post
-      render json: PostSerializer.new(@post, {params: {fetch_comments: true}, include: %w[user status category comments]}).serializable_hash
+      render json: PostSerializer.new(@post, {
+        params: {fetch_comments: true},
+        include: %w[user status category posts_likes posts_votes comments comments.user comments.comments_likes comments.comments_votes]
+      }).serializable_hash
     else
       render json: @post.errors, status: :unprocessable_entity
     end

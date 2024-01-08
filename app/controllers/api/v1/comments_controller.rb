@@ -16,7 +16,7 @@ class Api::V1::CommentsController < ApplicationController
   # Returns a specific comment
   def show
     if @comment
-      render json: CommentSerializer.new(@comment, include: %w[user]).serializable_hash
+      render json: CommentSerializer.new(@comment, include: %w[user comments_likes comments_votes]).serializable_hash
     else
       render json: @comment.errors, status: :unprocessable_entity
     end

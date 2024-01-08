@@ -20,6 +20,6 @@ class PostSerializer
   } do |post|
     post.comments.order(created_at: :desc)
   end
-  has_many :posts_likes, lazy_load_data: true
-  has_many :posts_votes, lazy_load_data: true
+  has_many :posts_likes
+  has_many :posts_votes
 end
