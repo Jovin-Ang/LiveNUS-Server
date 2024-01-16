@@ -9,7 +9,7 @@ gem "rails", "~> 7.1.2"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
+gem "puma", "~> 6.4.2"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -50,6 +50,6 @@ gem "devise", "~> 4.9"
 
 gem "devise-api", "~> 0.1.3"
 
-gem "jsonapi-serializer"
+gem "jsonapi-serializer", "~> 2.2.0"
 
-gem "faker"
+gem "faker", "~> 3.2.3"

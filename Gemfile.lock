@@ -126,7 +126,7 @@ GEM
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
     erubi (1.12.0)
-    faker (3.2.2)
+    faker (3.2.3)
       i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -167,7 +167,7 @@ GEM
     orm_adapter (0.5.0)
     psych (5.1.2)
       stringio
-    puma (6.4.0)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
@@ -239,10 +239,10 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   devise-api (~> 0.1.3)
-  faker
-  jsonapi-serializer
+  faker (~> 3.2.3)
+  jsonapi-serializer (~> 2.2.0)
   mysql2 (~> 0.5)
-  puma (>= 5.0)
+  puma (~> 6.4.2)
   rack-cors
   rails (~> 7.1.2)
   tzinfo-data
